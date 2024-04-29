@@ -1,0 +1,27 @@
+     {
+        "manifest_version": 3,
+        "name": "Point médiant",
+        "description": "Voici une extension de navigateur inclusive qui ajoute des points médians et féminise les mots masculins lors de votre navigation.",
+        "version": "0.1",
+        "icons": {
+            "16": "images/heart16.png",
+            "24": "images/heart24.png",
+            "32":"images/heart32.png"
+      },
+        "options_page": "settings.html",
+        "action": {
+          "default_popup": "popup.html",
+          "default_icon": "images/heart24.png"
+        },
+        "permissions": [],
+        "host_permissions": [
+        "*://*/*"
+    ],
+        "background": {
+            "service_worker": "background.js"
+          },
+          "content_scripts": [{
+            "js": ["foreground.js"],
+            "matches": ["https://github.com/*"]
+        }]
+     }
