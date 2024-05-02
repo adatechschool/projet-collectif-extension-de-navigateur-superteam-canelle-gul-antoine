@@ -7,21 +7,21 @@
             "16": "images/heart16.png",
             "24": "images/heart24.png",
             "32":"images/heart32.png"
-      },
-        "options_page": "settings.html",
-        "action": {
+          },
+          "action": {
           "default_popup": "popup.html",
           "default_icon": "images/heart24.png"
         },
-        "permissions": [],
+        "permissions": ["tabs"],
         "host_permissions": [
         "*://*/*"
     ],
-        "background": {
-            "service_worker": "background.js"
-          },
-          "content_scripts": [{
-            "js": ["foreground.js"],
-            "matches": ["https://github.com/*"]
-        }]
+          "content_scripts": [
+            {
+            "matches": ["*://*/*"],
+            "all_frames": true,
+            "js": ["content.js"],
+            "run_at": "document_end"
+            }
+        ]
      }
