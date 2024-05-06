@@ -8,6 +8,7 @@
     height: 100vh;
     margin: 0;
     padding: 0;
+	position: relative;
 }
 
 .content {
@@ -17,41 +18,55 @@
     text-align: center;
 }
 
+.love{
+	margin-bottom: 70px;
+}
+
+body{
+	/* margin: 0px;
+	padding: 0px; */
+	width: 300px;
+	height: 300px;
+	display: grid;
+	position: relative;
+	place-items: center;
+}
+
+body::before{
+	content:'';
+	background-size: cover;
+	background-image: url("images/studioghibli.webp");
+	position: absolute;
+	inset: 0;
+	opacity: 0.65;
+}
+
 h2 {
+	text-align: center;
     color: white;
+	isolation: isolate;
     font-family: "Nanum Gothic", sans-serif;
     padding: 10px;
     width: 200px;
-    height: 10vh;
+    /* height: 20vh; */
+	margin-bottom: 20px; 
 }
 
 p {
     text-align: center;
+	isolation: isolate;
     padding: 10px;
     width: 200px;
-    height: 10vh;
+    /* height: 20vh; */
     color: white;
     font-family: "Outfit", sans-serif;
     font-size: medium;
-}
-
-*{
-	margin: 0px;
-	padding: 0px;
-	width: 300px;
-	height: 250px;
-	margin-left: auto;
-	margin-right: auto;
-	background-position: center center;
-	background-size: cover;
-	background-attachment: fixed;
-	background-image: url("images/relaxing-forest.gif");
-	
+	margin-bottom: 50px; 
 }
 
 .love-heart:before,#switch {
 	display: none;
-   }
+}
    
    .love-heart, .love-heart::after {
 	border-color: hsl(231deg 28% 86%);
