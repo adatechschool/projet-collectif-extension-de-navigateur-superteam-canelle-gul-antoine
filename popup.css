@@ -1,63 +1,152 @@
-@import url('https://fonts.googleapis.com/css2?family=Jersey+25&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Domine:wght@400..700&family=Jersey+25&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&family=Nanum+Gothic&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 
-
-.switch {
-	display: inline-block;
-	position: relative;
-	width: 70px;
-	height: 40px;
-	cursor: pointer;
-	overflow: hidden;
+.center-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
 }
 
-.switch input {
-	position: absolute;
-	top: -30px;
-	left: -30px;
-	width: 0;
-	height: 0;
-}
-
-.switch input + span {
-    position: absolute;
-   top: 0;
-   bottom: 0;
-   left: 0;
-   right: 0;
-   background: #df99c0;
-   border-radius: 20px;
-}
-
-.switch input:checked + span {
-	background: #bf3485;
-}
-
-.switch input + span:before {
-	content: "";
-	display: inline-block;
-	position: absolute;
-	top: 50%;
-	left: 4px;
-	width: 32px;
-	height: 32px;
-	background: white;
-	border-radius: 50%;
-	transform: translateY(-50%);
-	transition: all .5s;
-}
-
-.switch input:checked + span:before {
-	left: 34px;
-}
-
-p {
-    font-family: "Domine", serif;
-    color: rgb(0, 0, 0);
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
 h2 {
-    font-family: "Domine", serif;
-    font-optical-sizing: auto;
-    color: rgb(0, 0, 0);
+    color: white;
+    font-family: "Nanum Gothic", sans-serif;
+    padding: 10px;
+    width: 200px;
+    height: 10vh;
 }
+
+p {
+    text-align: center;
+    padding: 10px;
+    width: 200px;
+    height: 10vh;
+    color: white;
+    font-family: "Outfit", sans-serif;
+    font-size: medium;
+}
+
+*{
+	margin: 0px;
+	padding: 0px;
+	width: 300px;
+	height: 250px;
+	margin-left: auto;
+	margin-right: auto;
+	background-position: center center;
+	background-size: cover;
+	background-attachment: fixed;
+	background-image: url("images/relaxing-forest.gif");
+	
+}
+
+.love-heart:before,#switch {
+	display: none;
+   }
+   
+   .love-heart, .love-heart::after {
+	border-color: hsl(231deg 28% 86%);
+	border: 1px solid;
+	border-top-left-radius: 100px;
+	border-top-right-radius: 100px;
+	width: 10px;
+	height: 8px;
+	border-bottom: 0
+   }
+   
+   .round {
+	position: absolute;
+	z-index: 1;
+	width: 8px;
+	height: 8px;
+	background: hsl(0deg 0% 100%);
+	box-shadow: rgb(0 0 0 / 24%) 0px 0px 4px 0px;
+	border-radius: 100%;
+	left: 0px;
+	bottom: -1px;
+	transition: all .5s ease;
+	animation: check-animation2 .5s forwards;
+   }
+   
+   input:checked + label .round {
+	transform: translate(0px, 0px);
+	animation: check-animation .5s forwards;
+	background-color: hsl(0deg 0% 100%);
+   }
+   
+   @keyframes check-animation {
+	0% {
+	 transform: translate(0px, 0px);
+	}
+   
+	50% {
+	 transform: translate(0px, 7px);
+	}
+   
+	100% {
+	 transform: translate(7px, 7px);
+	}
+   }
+   
+   @keyframes check-animation2 {
+	0% {
+	 transform: translate(7px, 7px);
+	}
+   
+	50% {
+	 transform: translate(0px, 7px);
+	}
+   
+	100% {
+	 transform: translate(0px, 0px);
+	}
+   }
+   
+   .love-heart {
+	box-sizing: border-box;
+	position: relative;
+	transform: rotate(-45deg) translate(-50%, -33px) scale(4);
+	display: block;
+	border-color: hsl(231deg 28% 86%);
+	cursor: pointer;
+	top: 0;
+   }
+   
+   input:checked + .love-heart, input:checked + .love-heart::after, input:checked + .love-heart .bottom {
+	border-color: hsl(347deg 81% 61%);
+	box-shadow: inset 6px -5px 0px 2px hsl(347deg 99% 72%);
+   }
+   
+   .love-heart::after, .love-heart .bottom {
+	content: "";
+	display: block;
+	box-sizing: border-box;
+	position: absolute;
+	border-color: hsl(231deg 28% 86%);
+   }
+   
+   .love-heart::after {
+	right: -9px;
+	transform: rotate(90deg);
+	top: 7px;
+   }
+   
+   .love-heart .bottom {
+	width: 11px;
+	height: 11px;
+	border-left: 1px solid;
+	border-bottom: 1px solid;
+	border-color: hsl(231deg 28% 86%);
+	left: -1px;
+	top: 5px;
+	border-radius: 0px 0px 0px 5px;
+   }

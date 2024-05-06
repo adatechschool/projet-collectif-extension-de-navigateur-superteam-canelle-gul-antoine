@@ -33,6 +33,8 @@ function querySelectorAllRegex(regex, attributeToSearch) {
 let text = querySelectorAllRegex(regex, attributeToSearch);
         //dico
         const dictionary = { 
+       
+    const dictionary = { 
             Absent : "Absent·e",
             absent :"absent·e",
             Absents :"Absent·es",
