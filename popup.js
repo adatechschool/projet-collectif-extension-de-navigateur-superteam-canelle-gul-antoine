@@ -3,18 +3,18 @@
 
 document.addEventListener('DOMContentLoaded', () => { //ici ça va exécuter le code de la fonction 
     let toggle = document.getElementById('switch'); //je récupère l'ID
-    
+
     // Envoie un message au script de contenu pour indiquer l'état actuel de l'extension
     //lorsque l'état de la case à cocher change ça exécute le code à l'intérieur de la fonction.
-    toggle.addEventListener('change', function(){ 
-         if(toggle.checked == true){
+    toggle.addEventListener('change', function () {
+        if (toggle.checked == true) {
             //récupère les onglets actifs dans la fenêtre active.
-        chrome.tabs.query({active: true, currentWindow: true}, function(tabs) { 
- //ici ça envoie un msg au contenu de la page active, indiquant si la case à cocher est cochée ou non (activée ou désactivée.)
-            chrome.tabs.sendMessage(tabs[0].id, {enabled: toggle.checked}); 
-        });
-    }else if(!toggle.checked){
+            chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+                //ici ça envoie un msg au contenu de la page active, indiquant si la case à cocher est cochée ou non (activée ou désactivée.)
+                chrome.tabs.sendMessage(tabs[0].id, { enabled: toggle.checked });
+            });
+        } else if (!toggle.checked) {
             chrome.tabs.reload();
-    }
+        }
     });
 });
