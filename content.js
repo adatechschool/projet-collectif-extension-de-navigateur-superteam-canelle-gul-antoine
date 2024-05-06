@@ -411,4 +411,4 @@ let text = querySelectorAllRegex(regex, attributeToSearch);//sélectionne tout l
         }
     } 
     }   
-});
+);
