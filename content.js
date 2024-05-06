@@ -29,10 +29,9 @@ function querySelectorAllRegex(regex, attributeToSearch) {
         return txt;
     }
 
-    //sélectionne tout les éléments de texte sur le site.
-let text = querySelectorAllRegex(regex, attributeToSearch);
-        //dico
-        const dictionary = { 
+    
+let text = querySelectorAllRegex(regex, attributeToSearch);//sélectionne tout les éléments de texte sur le site.
+        const dictionary = { //dico
             Absent : "Absent·e",
             absent :"absent·e",
             Absents :"Absent·es",
@@ -412,6 +411,4 @@ let text = querySelectorAllRegex(regex, attributeToSearch);
         }
     } 
     }   
-);
-
-
+});
