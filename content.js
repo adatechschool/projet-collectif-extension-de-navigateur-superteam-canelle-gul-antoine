@@ -1,9 +1,14 @@
-chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) { //écoute les messages envoyés depuis d'autres parties de l'extension, comme le popup.
-    if (message.enabled) { //vérifie si le message indique que l'extension doit être activée.
-        // Activer votre extension
-        const regex = /(\[(.*?)\])|(.*?)/g
-        const attributeToSearch = `h1,h2,h3,h4,h5,p,b,i,a,span,caption`
+//écoute les messages envoyés depuis d'autres parties de l'extension, comme le popup.
+chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) { 
 
+    //vérifie si le message indique que l'extension doit être activée.
+    if (message.enabled == true) { 
+
+
+        const regex = /(\[(.*?)\])|([.\u00B7]*?)/g
+        const attributeToSearch = `h1,h2,h3,h4,h5,p,b,i,a,span,caption`
+        
+        // Activer votre extension
 function querySelectorAllRegex(regex, attributeToSearch) {
     const txt = [];
     if (attributeToSearch) {
@@ -24,9 +29,10 @@ function querySelectorAllRegex(regex, attributeToSearch) {
         return txt;
     }
 
-    
-let text = querySelectorAllRegex(regex, attributeToSearch);//sélectionne tout les éléments de texte sur le site.
-        const dictionary = { //dico
+    //sélectionne tout les éléments de texte sur le site.
+let text = querySelectorAllRegex(regex, attributeToSearch);
+       
+    const dictionary = { 
             Absent : "Absent·e",
             absent :"absent·e",
             Absents :"Absent·es",
@@ -396,19 +402,14 @@ let text = querySelectorAllRegex(regex, attributeToSearch);//sélectionne tout l
             illustrateur :"illustrateur·rice",
             illustrateurs : "illustrateur·rices"
         };
-        
-        for (let i = 0; i < text.length; i++) { //boucle permettant de remplacer le côté gauche du dico par le côté droit.
+        //boucle permettant de remplacer le côté gauche du dico par le côté droit.
+        for (let i = 0; i < text.length; i++) { 
             for (let y = 0; y < Object.keys(dictionary).length; y++) {
                 if (text[i].innerHTML.includes(Object.keys(dictionary)[y])) {
                     text[i].innerHTML = text[i].innerHTML.replaceAll(Object.keys(dictionary)[y], dictionary[Object.keys(dictionary)[y]]);
                 }
             }
         }
-    } else { //si la cache n'est pas cochée l'extension reste désactivée.
-        // Désactiver votre extension ici
-        const text = document.querySelectorAll(`h1,h2,h3,h4,h5,p,a,span,caption`);
-        for (let i = 0; i < text.length; i++) {
-            text[i].innerHTML = text[i].innerHTML.replaceAll(/femme/g, 'homme').replace(/Femme/g, 'Homme').replace(/femmes/g, 'hommes');
-        }
+    } 
     }   
-});
+);
