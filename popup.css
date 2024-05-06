@@ -43,13 +43,14 @@ body::before{
 
 h2 {
 	text-align: center;
-    color: white;
+    color: rgb(0, 0, 0);
 	isolation: isolate;
     font-family: "Nanum Gothic", sans-serif;
     padding: 10px;
     width: 200px;
     /* height: 20vh; */
 	margin-bottom: 20px; 
+	font-weight: 600;
 }
 
 p {
@@ -58,9 +59,10 @@ p {
     padding: 10px;
     width: 200px;
     /* height: 20vh; */
-    color: white;
+    color: rgb(0, 0, 0);
     font-family: "Outfit", sans-serif;
     font-size: medium;
+	font-weight: 600;
 	margin-bottom: 50px; 
 }
 
