@@ -6,14 +6,24 @@ chrome.runtime.onMessage.addListener(async function (message, sender, sendRespon
   if (message.enabled == true) {
 
 
-    const regex = /(\[(.*?)\])|([.\u00B7]*?)/g
+    const regex = /\w+/g
     const attributeToSearch = `h1,h2,h3,h4,h5,p,b,i,a,span,caption`
+    // let tmp =[];
+    // let x = []
+    // let temp = document.querySelectorAll(`h1,h2,h3,h4,h5,p,b,i,a,span,caption`);
+    // console.log(temp);
+    // for (let element of document.querySelectorAll(`${attributeToSearch}`)) {
+    //  console.log(element.innerHTML);
+    //   temp[element].innerText=x[element]; 
+    //   // console.log(temp[element].innerText)
+    // }
+    // console.log(x);
 
     // Activer votre extension
     async function querySelectorAllRegex(regex, attributeToSearch) {
       const txt = [];
       if (attributeToSearch) {
-        for (let element of document.querySelectorAll(`${attributeToSearch}`)) {
+        for (let element of document.querySelectorAll(`${attributeToSearch}`)) {  
           if (regex.test(element.getAttribute(attributeToSearch))) {
             txt.push(element);
           }
@@ -45,7 +55,7 @@ console.log(fullURL)
         const dico = dictionary.dictionary[0]
         for (let i = 0; i < text.length; i++) {
           for (let y = 0; y < Object.keys(dico).length; y++) {
-            if (text[i].innerHTML.includes(Object.keys(dico)[y])) {
+            if (text[i].innerHTML === Object.keys(dico)[y]) {
               text[i].innerHTML = text[i].innerHTML.replaceAll(Object.keys(dico)[y], dico[Object.keys(dico)[y]]);
               console.log(text[i].innerHTML)
               console.log(dico[Object.keys(dico)[y]])
