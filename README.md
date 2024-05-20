@@ -3,6 +3,14 @@
 📚 𝐃𝐞𝐬𝐜𝐫𝐢𝐩𝐭𝐢𝐨𝐧 𝐝𝐮 𝐩𝐫𝐨𝐣𝐞𝐭 :
 Rendre son site inclusif avec un point médian est une extension de navigateur Google Chrome qui féminise les mots sur tous les sites en ajoutant un point médian. Cette extension vise à promouvoir l'inclusivité linguistique sur le web.
 
+
+
+https://github.com/adatechschool/projet-collectif-extension-de-navigateur-superteam-cannelle-gul-antoine/assets/158152207/e888b646-25b4-4769-b86b-d72beca79255
+
+
+
+
+
 ✍️ 𝐅𝐨𝐧𝐜𝐭𝐢𝐨𝐧𝐧𝐚𝐥𝐢𝐭𝐞́𝐬 𝐩𝐫𝐢𝐧𝐜𝐢𝐩𝐚𝐥𝐞𝐬 :
 - Féminisation automatique des mots avec un point médian,
 - Activation facile via un bouton de bascule.
